@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Unity Dark Theme Colors */
+    --background: 0 0% 22%;
+    --foreground: 0 0% 74%;
+
+    --card: 0 0% 22%;
+    --card-foreground: 0 0% 74%;
+
+    --popover: 0 0% 22%;
+    --popover-foreground: 0 0% 74%;
+
+    --primary: 209 56% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 74%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 209 56% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 0 0% 13%;
+    --input: 0 0% 18%;
+    --ring: 209 56% 47%;
+
+    --radius: 0.25rem;
+
+    /* Unity-specific panel colors */
+    --panel: 0 0% 22%;
+    --panel-header: 0 0% 15%;
+    --panel-border: 0 0% 13%;
+    --selection: 209 56% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow: hidden;
+  }
+
+  /* Custom scrollbar for Unity look */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 18%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 30%);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 40%);
+  }
+}
+
+/* Unity-style input fields */
+.unity-input {
+  @apply bg-input border border-border rounded-sm px-2 py-1 text-sm text-foreground;
+  @apply focus:outline-none focus:ring-1 focus:ring-accent;
+}
+
+.unity-input::-webkit-inner-spin-button,
+.unity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
